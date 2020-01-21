@@ -26,7 +26,4 @@ import getpass
 authtoken = getpass.getpass()
 get_ipython().system_raw('./ngrok authtoken $authtoken && ./ngrok tcp 22 &')
 print("Root password: {}".format(password))
-cmd10 = 'curl -s http://localhost:4040/api/tunnels | python3 -c \
-    "import sys, json; print(json.load(sys.stdin)['tunnels'][0]['public_url'])"'
-os.system(cmd10)
 
